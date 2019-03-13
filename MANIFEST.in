@@ -1,0 +1,2 @@
+recursive-include SDNMonitorApp/static *
+recursive-include SDNMonitorApp/templates *

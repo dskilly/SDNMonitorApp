@@ -1,0 +1,64 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% load static from staticfiles %}
+<style>
+	body {
+		font-family: "Lato", sans-serif;
+		background-image: url("{% static "/Background.webp" %}");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+	
+}
+	h2{
+		font-family: Monospace,lucidia console;
+		color: white;
+		background-color: rgba(0,0,0,0.7);
+
+		
+		border-spacing: 5px;
+		border-color: rgba(0,0,0,1);
+		
+		font-size: 37px;
+		
+		padding: 4px;
+		text-align: center;
+		letter-spacing: 0.2em;
+	}
+	form{
+		font-family: Monospace,lucidia console;
+		color: white;
+		
+		background-color: rgba(0,0,0,0.7);
+		border-spacing: 5px;
+		border-color: rgba(0,0,0,1);
+		padding: 4px;
+		text-align: center;
+		position: relative;
+		
+		width: 340px;
+		height: auto;
+		margin-left: 520px;
+		
+	}
+	p{
+	font-size: 23px;
+	}
+	
+</style>
+<br><br><br>
+<h2>╘PINGAS╛    SDN Monitoring App v 0.5</h2>
+<br><br><br><br>
+
+<form method="post" class ="container">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="image" id="submit" alt="Login" src={% static "/loginbutton.png" %}>
+  </br>
+</form>
+{% endblock %}

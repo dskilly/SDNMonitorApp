@@ -1,0 +1,171 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+  {% load static from staticfiles %}
+
+  
+ 
+
+
+  <style>
+	body {
+		background-image: url("{% static "/giphy.gif" %}");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+	}
+	h2{
+		font-family: Monospace,lucidia console;
+		color: white;
+		
+		background-color: rgba(0,0,0,0.7);
+		border-spacing: 5px;
+		border-color: rgba(0,0,0,1);
+		
+		font-size: 37px;
+		margin: 10;
+		margin-bottom: 7px;
+		margin-left: 7px;
+		padding: 4px;
+		text-align: center;
+		letter-spacing: 0.2em;
+	}
+	
+	
+	
+	a{
+		color: white;
+		text-decoration: none;
+	}
+	#DashDiv{
+		text-align: center;
+		font-family: Monospace,lucidia console;
+		
+		background-color: rgba(0,0,0,0.7);
+		border-spacing: 5px;
+		border-color: rgba(0,0,0,1);
+		padding: 4px;
+		text-align: center;
+		line-height: 150%;
+		margin-top: 50px
+		margin: auto;
+		display: inline-block;
+		width: 200px;
+		height: 300px;
+
+	}
+	
+	#AppDiv{
+		text-align: center;
+		font-family: Monospace,lucidia console;
+		
+		background-color: rgba(0,0,0,0.7);
+		border-spacing: 5px;
+		border-color: rgba(0,0,0,1);
+		padding: 4px;
+		text-align: center;
+		line-height: 150%;
+		margin-top: 50px
+		margin: auto;
+		display: inline-block;
+		width: 200px;
+		height: 300px;
+	}
+	#SiteDiv{
+		text-align: center;
+		font-family: Monospace,lucidia console;
+		
+		background-color: rgba(0,0,0,0.7);
+		border-spacing: 5px;
+		border-color: rgba(0,0,0,1);
+		padding: 4px;
+		text-align: center;
+		line-height: 150%;
+		margin-top: 150px
+		margin-left: 50px;
+		display: inline-block;
+		width: 200px;
+		position: relative;
+		height: 300px;
+	}
+	#LogDiv{
+		text-align: center;
+		font-family: Monospace,lucidia console;
+		
+		background-color: rgba(0,0,0,0.7);
+		border-spacing: 20px;
+		border-color: rgba(0,0,0,1);
+		padding: 4px;
+		text-align: center;
+		line-height: 150%;
+		margin-top: 50px
+		margin: auto;
+		display: inline-block;
+		width: 200px;
+		height: 300px;
+
+	}
+	
+	#navigation{
+		text-align: center;
+		margin-top: 170px
+
+	}
+	#spacediv{
+		width: 32px;
+		margin: auto;
+		display: inline-block;
+	}
+</style>
+  <body>
+
+	<h2>SDN NETWORK MONITOR</h2>
+	<div id="navigation">
+		<div id= "DashDiv">
+			<p><a href="./Dashboard.php?page1_var=Data entered from page 1"><img src={% static "/dshbrd.png" %} class="block"></img><br><br>Main dashboard to observe Network Statistics and Configurations</a></p>
+		</div>
+		
+		<div id="spacediv">
+		</div>
+
+		<div id= "AppDiv">
+			<p><a href="../Part3/Appconfig/ui_appcnfg_TblMtnce..php?page1_var=Data entered from page 1"><img src={% static "/appconfig.png" %} class="block"></img><br><br>Application Configuration - Add websites to the Dashboard Monitor</a></p>
+		</div>
+
+		<div id="spacediv">
+		</div>
+	
+		<div id= "SiteDiv">
+			<p><a href="../Part3/Siteconfig/ui_sitecnfg_TblMtnce.php?page2_var=Data entered from page 2"><img src={% static "/siteconf.png" %} class="block"></img><br><br>Network Configuration - Configure the Network on the Dashboard Monitor</a></p>
+		</div>
+		
+		<div id="spacediv">
+		</div>
+		
+		<div id= "LogDiv">
+			<p><a href="{% url 'logout' %}"><img src={% static "/logout.png" %} class="block"></img><br><br>Logout<br>Currently logged in as: {{ user.username }}<br><br></a></p>
+		</div>
+	</div>
+  </body>
+  
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
