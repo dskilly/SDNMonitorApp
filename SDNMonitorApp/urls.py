@@ -23,6 +23,8 @@ from django.contrib.auth.decorators import login_required
 from django_netjsongraph.api import urls as netjsongraph_api
 from django_netjsongraph.visualizer import urls as netjsongraph_visualizer
 
+from . import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Appmonitorsite/', include('Appmonitor.urls')),
@@ -31,5 +33,5 @@ urlpatterns = [
 
     url('map1/', include(netjsongraph_api)),
     url('map2/', include(netjsongraph_visualizer)),
-
+    url('logs/', views.logs, name='logs')
 ]

@@ -7,4 +7,3 @@ from django.template import loader
 
 def Appmonitorsite(request):
 	return render(request,'Appmonitor/Appmonitorsite.html')
-
