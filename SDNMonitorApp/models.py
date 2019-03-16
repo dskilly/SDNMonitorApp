@@ -15,3 +15,25 @@ class Log_Message(models.Model):
 
 	def __str__(self):
 		return self.syslog
+
+class nodes_table(models.Model):
+	id = models.TextField()
+	created = models.DateTimeField()
+	modified = models.DateTimeField()
+	label = models.TextField()
+
+	def __str__(self):
+		return self.label
+
+class links_table(models.Model):
+	id = models.TextField()
+	created = models.DateTimeField()
+	modified = models.DateTimeField()
+	cost = models.IntegerField()
+	status = models.BooleanField()
+	source_id = models.TextField()
+	target_id = models.Textfield()
+	status_changed = models.DateTimeField()
+
+	def __str__(self):
+		return 'link: {} -> {}'.format(self.source_id, self.target_id)

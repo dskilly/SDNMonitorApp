@@ -1,4 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+
+import json
 
 from .models import *
 
@@ -7,3 +9,19 @@ def logs(request):
 	response = 'Logs for the SDN Controller:<br />'
 	response += '<br />'.join([x for x in logs]) if len(logs) > 0 else 'No logs...'
 	return HttpResponse(response)
+
+def topology_request(request):
+	topo = {
+		'type': 'NetworkGraph',
+		'label': 'Topology for SDNMonitorApp',
+	}
+	topo['nodes'] = [{
+		'id': x.id,
+		'label': x.label
+	} for x in nodes_table]
+	topo['links'] = [{
+		'source': x.source_id,
+		'target': x.target_id,
+		'cost': x.cost
+	} for x in links_table]
+	return JsonResponse(topo)

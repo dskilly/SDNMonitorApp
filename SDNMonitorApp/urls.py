@@ -33,5 +33,6 @@ urlpatterns = [
 
     url('map1/', include(netjsongraph_api)),
     url('map2/', include(netjsongraph_visualizer)),
-    url('logs/', views.logs, name='logs')
+    url('logs/', views.logs, name='logs'),
+    url('topo_request', views.topology_request),
 ]
