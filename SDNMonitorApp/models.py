@@ -17,7 +17,7 @@ class Log_Message(models.Model):
 		return self.syslog
 
 class nodes_table(models.Model):
-	id = models.TextField()
+	id = models.TextField(primary_key=True)
 	created = models.DateTimeField()
 	modified = models.DateTimeField()
 	label = models.TextField()
@@ -26,7 +26,7 @@ class nodes_table(models.Model):
 		return self.label
 
 class links_table(models.Model):
-	id = models.TextField()
+	id = models.TextField(primary_key=True)
 	created = models.DateTimeField()
 	modified = models.DateTimeField()
 	cost = models.IntegerField()
