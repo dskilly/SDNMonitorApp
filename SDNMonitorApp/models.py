@@ -32,7 +32,7 @@ class links_table(models.Model):
 	cost = models.IntegerField()
 	status = models.BooleanField()
 	source_id = models.TextField()
-	target_id = models.Textfield()
+	target_id = models.TextField()
 	status_changed = models.DateTimeField()
 
 	def __str__(self):
