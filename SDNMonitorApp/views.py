@@ -18,10 +18,10 @@ def topology_request(request):
 	topo['nodes'] = [{
 		'id': x.id,
 		'label': x.label
-	} for x in nodes_table]
+	} for x in nodes_table.objects.all()]
 	topo['links'] = [{
 		'source': x.source_id,
 		'target': x.target_id,
 		'cost': x.cost
-	} for x in links_table]
+	} for x in links_table.objects.all()]
 	return JsonResponse(topo)
