@@ -13,6 +13,9 @@ def logs(request):
 def topology_request(request):
 	topo = {
 		'type': 'NetworkGraph',
+		'protocol': 'openflow',
+		'version': '1.0.0',
+		'metric': '',
 		'label': 'Topology for SDNMonitorApp',
 	}
 	topo['nodes'] = [{
