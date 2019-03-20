@@ -104,7 +104,7 @@ body {
 <!-- Navbar -->
 <div id="navbar">
   <a href="#"><img src={% static "/userico.png" %} class="block"> Welcome, {{ user.username }}</a>
-  <a href="{% url 'map2' %}"><img src={% static "/dshbrdico.png" %} class="block"> Topology</a>
+  <a href="{% url 'topology_list' %}"><img src={% static "/dshbrdico.png" %} class="block"> Topology</a>
   <a href="{% url 'Appmonitorsite' %}"><img src={% static "/appconfigico.png" %} class="block"> Statistics</a>
   <a href="{% url 'admin:index' %}"><img src={% static "/siteconfico.png" %} class="block"> Admin Config</a>
   <a href="{% url 'logout' %}"><img src={% static "/logoutico.png" %} class="block"> Logout</a>
