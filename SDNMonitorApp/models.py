@@ -16,6 +16,11 @@ class Log_Message(models.Model):
 	def __str__(self):
 		return self.syslog
 
+
+#
+#Tables for topology information
+#
+
 class nodes_table(models.Model):
 	id = models.TextField(primary_key=True)
 	created = models.DateTimeField()
