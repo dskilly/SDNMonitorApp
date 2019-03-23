@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'SDNMonitorApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(Path.home(), 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sdnmonitorapp',
+        'USER': 'sdnmonitor',
+        'PASSWORD': 'memeteam',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
