@@ -74,6 +74,7 @@ body.frontend{
     stroke: #3acc38;
 }
 
+
 .njg-tooltip{ fill: #fff; opacity: 0.8 }
 
 body.frontend {
@@ -107,6 +108,14 @@ body.frontend {
     stroke: red;
 }
 
+.congested{
+    stroke: #ebbd06;
+}
+.congested:hover,.congested.njg-open{
+    stroke: fecc07;
+}
+
+
 /* legend */
 #legend{
     position: absolute;
@@ -136,6 +145,7 @@ body.frontend {
     border-bottom-style: solid;
 }
 #legend .up{ border-color: #3acc38 }
+#legend .congested{ border-color: #ebbd06 }
 #legend .down{ border-color: red }
 
 .njg-switcher{
