@@ -17,6 +17,7 @@ class BaseTopologyListView(View):
 class BaseTopologyDetailView(View):
     def get(self, request, pk):
         topology = get_object_or_404(self.topology_model, pk)
+        topology.update()
         return render_to_response('netjsongraph/detail.html', {
             'topology': topology,
             'graph_url': reverse('network_graph', args=[topology.pk]),

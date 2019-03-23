@@ -28,3 +28,5 @@ def topology_request(request):
 		'cost': x.cost
 	} for x in links_table.objects.all()]
 	return JsonResponse(topo)
+	#Fix link status, to show up or down
+	#add more complex topologies/networks
