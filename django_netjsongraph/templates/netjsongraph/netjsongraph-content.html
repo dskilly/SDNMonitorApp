@@ -1,10 +1,41 @@
 {% load i18n %}
 
 <style>
+/* legend */
+#legend{
+    position: absolute;
+    top: auto;
+    left: 5px;
+    bottom: 5px;
+    width: auto;
+    height: auto;
+    max-width: 250px;
+    padding: 0 15px;
+    background: #fbfbfb;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+#legend p{ line-height: 16px; margin: 10px 0 }
+#legend span{
+    width: 16px;
+    margin-right: 5px;
+}
+#legend span.link{
+    display: inline-block;
+    height: 5px;
+    border-bottom-width: 6px;
+    border-bottom-style: solid;
+}
+#legend .up{ border-color: #3acc38 }
+#legend .congested{ border-color: #ebbd06 }
+#legend .down{ border-color: red }
 
 </style>
 <div id="legend">
-    <p><span class="circle router">&nbsp;</span> {% trans 'router' %}</p>
+	<p><span class="circle router">&nbsp;</span> {% trans 'router' %}</p>
 	<p><span class="circle switch">&nbsp;</span> {% trans 'switch' %}</p>
     <p><span class="link up">&nbsp;</span> {% trans 'link up' %}</p>
 	<p><span class="link congested">&nbsp;</span> {% trans 'congested' %}</p>
