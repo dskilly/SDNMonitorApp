@@ -20,4 +20,26 @@ class flow_stats(models.Model):
 	idle_timeout = models.IntegerField()
 	hard_timeout = models.IntegerField()
 	packet_count = models.IntegerField()
-	
+
+class desc_stats(models.Model):
+	mfr_desc = models.TextField()
+	hw_desc = models.TextField()
+	sw_desc = models.TextField()
+	serial_num = models.TextField()
+	dp_desc = models.TextField()
+
+class table_stats(models.Model):
+	table_id = models.TextField(primary_key=True)
+	name = models.TextField()
+	wildcards = models.IntegerField()
+	max_entries = models.IntegerField()
+	active_count = models.IntegerField()
+	lookup_count = models.IntegerField()
+	matched_count = models.IntegerField()
+
+class queue_stats(models.Model):
+	port_no = models.IntegerField()
+	queue_id = models.IntegerField()
+	tx_bytes = models.IntegerField()
+	tx_packets = models.IntegerField()
+	tx_errors = models.IntegerField()
