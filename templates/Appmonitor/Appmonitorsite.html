@@ -128,27 +128,30 @@ google.charts.setOnLoadCallback(drawChart);
 
 
 // Draw the chart and set the chart values
-  function drawChart() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('number', 'Hour');
-    data.addColumn('number', 'Testnode1');
-    data.addColumn('number', 'Testnode2');
-
+function drawChart() {
+  var data = new google.visualization.arrayToDataTable([
+    ["Node id", "Total errors"],
     {% for x in nodes %}
-      data.addRow([{{ x.name }}, {{ x.tx_errors }}]);
+    ["{{ x.name }}", {{ x.tx_errors }}],
     {% endfor %}
+  ]);
 
-    var options = {
-      chart: {
-        title: 'Ping response times',
-        subtitle: 'in miliseconds'
-      }, height: 300
-    };
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1]);
 
-    var chart = new google.charts.Line(document.getElementById('Statchart_chart','Statchart_chart2'));
+  var options = {
+    title: "Packet errors per device",
+    width: "100%",
+    height: "100%",
+    bar: {groupWidth: "95%"},
+    legend: {position: "none"},
+    color: "red",
+  };
 
-    chart.draw(data, google.charts.Line.convertOptions(options));
-  }
+  var chart = new google.visualization.ColumnChart(document.getElementById('Statchart_chart'));
+
+  chart.draw(view, options);
+}
 </script>
 
 <script type="text/javascript">
