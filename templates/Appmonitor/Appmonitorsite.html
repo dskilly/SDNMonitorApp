@@ -94,12 +94,30 @@ body {
 	padding: 15px;
 	text-align: center;
 
-	}
+}
+
+/*------------Table Style---------*/
+#Flowchart{
+    margin-left: 20%;
+  margin-right: 20%;
+  position: inline-block;
+  background-color: rgba(255,255,255,0.92);
+  padding: 15px;
+  text-align: center;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/*-------End of Table Style---------*/
 
 </style>
 </head>
-<body>
-
+<body onload="flowTableLoad()">
 
 <!-- Navbar -->
 <div id="navbar">
@@ -163,8 +181,8 @@ function drawChart() {
     }
 
     {% for x in flows %}
-      var row = table.insertRow(i);
-      var cell1 = row.insertCell(1);
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
       cell1.innerHTML = "{{ x.table_id }}";
       var cell2 = row.insertCell(1);
       cell2.innerHTML = "{{ x.priority }}";
@@ -203,6 +221,21 @@ function myFunction() {
 
 
 </script>
+
+<br>  
+<div id="Flowchart" >
+<table id="TABLE">
+  <tr>
+    <th>Table ID</th>
+    <th>Piority</th> 
+    <th>Packets</th>
+    <th>Duration sec</th> 
+    <th>Idle timeout</th> 
+    <th>Hard timeout</th>
+  </tr>
+</table>
+<br>
+<button onclick="flowTableLoad()">Load Flows</button>
    
 </body>
 </html> 
