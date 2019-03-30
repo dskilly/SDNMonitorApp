@@ -94,12 +94,30 @@ body {
 	padding: 15px;
 	text-align: center;
 
-	}
+}
+
+/*------------Table Style---------*/
+#Flowchart{
+    margin-left: 20%;
+  margin-right: 20%;
+  position: inline-block;
+  background-color: rgba(255,255,255,0.92);
+  padding: 15px;
+  text-align: center;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/*-------End of Table Style---------*/
 
 </style>
 </head>
-<body>
-
+<body onload="flowTableLoad()">
 
 <!-- Navbar -->
 <div id="navbar">
@@ -128,42 +146,56 @@ google.charts.setOnLoadCallback(drawChart);
 
 
 // Draw the chart and set the chart values
- function drawChart() {
+function drawChart() {
+  var data = new google.visualization.arrayToDataTable([
+    ["Node id", "Total errors"],
+    {% for x in nodes %}
+    ["{{ x.name }}", {{ x.tx_errors }}],
+    {% endfor %}
+  ]);
 
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Hour');
-      data.addColumn('number', 'Testnode1');
-      data.addColumn('number', 'Testnode2');
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1]);
 
+  var options = {
+    title: "Packet errors per device",
+    width: "100%",
+    height: "100%",
+    bar: {groupWidth: "95%"},
+    legend: {position: "none"},
+    color: "red",
+  };
 
-      data.addRows([
-        [1,  37.8, 80.8],
-        [2,  30.9, 69.5],
-        [3,  25.4,   57],
-        [4,  11.7, 18.8],
-        [5,  11.9, 17.6],
-        [6,   8.8, 13.6],
-        [7,   7.6, 12.3],
-        [8,  12.3, 29.2],
-        [9,  16.9, 42.9],
-        [10, 12.8, 30.9],
-        [11,  5.3,  7.9],
-        [12,  6.6,  8.4],
-        [13,  4.8,  6.3],
-        [14,  4.2,  6.2]
-      ]);
+  var chart = new google.visualization.ColumnChart(document.getElementById('Statchart_chart'));
 
-      var options = {
-        chart: {
-          title: 'Ping response times',
-          subtitle: 'in miliseconds'
-        },  height: 300
-      };
+  chart.draw(view, options);
+}
+</script>
 
-      var chart = new google.charts.Line(document.getElementById('Statchart_chart','Statchart_chart2'));
-
-      chart.draw(data, google.charts.Line.convertOptions(options));
+<script type="text/javascript">
+  function flowTableLoad() {
+    var table = document.getElementById("TABLE");
+    var x = document.getElementById("TABLE").rows.length;
+    for(j = x - 1; j > 0; j--) {
+      var row = table.deleteRow(j);
     }
+
+    {% for x in flows %}
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      cell1.innerHTML = "{{ x.table_id }}";
+      var cell2 = row.insertCell(1);
+      cell2.innerHTML = "{{ x.priority }}";
+      var cell3 = row.insertCell(2);
+      cell3.innerHTML = "{{ x.packet_count }}";
+      var cell4 = row.insertCell(3);
+      cell4.innerHTML = "{{ x.duration_sec }}";
+      var cell5 = row.insertCell(4);
+      cell5.innerHTML = "{{ x.idle_timeout }}";
+      var cell6 = row.insertCell(5);
+      cell6.innerHTML = "{{ x.hard_timeout }}";
+    {% endfor %}
+  }
 </script>
 
 <script>
@@ -189,6 +221,21 @@ function myFunction() {
 
 
 </script>
+
+<br>  
+<div id="Flowchart" >
+<table id="TABLE">
+  <tr>
+    <th>Table ID</th>
+    <th>Piority</th> 
+    <th>Packets</th>
+    <th>Duration sec</th> 
+    <th>Idle timeout</th> 
+    <th>Hard timeout</th>
+  </tr>
+</table>
+<br>
+<button onclick="flowTableLoad()">Load Flows</button>
    
 </body>
 </html> 

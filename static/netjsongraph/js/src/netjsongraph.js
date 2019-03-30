@@ -105,7 +105,7 @@
             el: "body",
             metadata: true,
             defaultStyle: true,
-            animationAtStart: true,
+            animationAtStart: false,
             scaleExtent: [0.25, 5],
             charge: -130,
             linkDistance: 50,
