@@ -273,7 +273,7 @@ class AbstractTopology(TimeStampedEditableModel):
         takes in consideration also ``strategy`` and ``expiration_time``
         """
         if link.status == 'congested':
-            return True
+            return False
         status_changed = link.status != status
         # if status has not changed return ``False`` immediately
         if not status_changed:
