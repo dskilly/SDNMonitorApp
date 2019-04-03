@@ -1,4 +1,6 @@
 from django.db import models
+from model_utils import Choices
+from model_utils.fields import StatusField
 
 class total_traffic(models.Model):
 	total_rx_bytes = models.IntegerField(default=0)
@@ -35,7 +37,8 @@ class links_table(models.Model):
 	created = models.DateTimeField()
 	modified = models.DateTimeField()
 	cost = models.IntegerField()
-	status = models.BooleanField()
+	STATUS = Choices('up', 'down', 'congested')
+	status = StatusField()
 	source_id = models.TextField()
 	target_id = models.TextField()
 	status_changed = models.DateTimeField()
