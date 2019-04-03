@@ -40,7 +40,9 @@ class links_table(models.Model):
 	STATUS = Choices('up', 'down', 'congested')
 	status = StatusField()
 	source_id = models.TextField()
+	source_port = models.IntegerField()
 	target_id = models.TextField()
+	target_port = models.IntegerField()
 	status_changed = models.DateTimeField()
 
 	def __str__(self):
