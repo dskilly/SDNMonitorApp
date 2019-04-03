@@ -4,7 +4,7 @@ from django.db import models
 
 class port_stats(models.Model):
 	device_id = models.TextField()
-	port_id = models.IntegerField(primary_key=True)
+	port_id = models.TextField(primary_key=True)
 	rx_packets = models.IntegerField()
 	tx_packets = models.IntegerField()
 	rx_dropped = models.IntegerField()
