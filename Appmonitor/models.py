@@ -13,7 +13,6 @@ class port_stats(models.Model):
 	tx_errors = models.IntegerField()
 
 class flow_stats(models.Model):
-	length = models.IntegerField()
 	table_id = models.TextField()
 	duration_sec = models.IntegerField()
 	priority = models.IntegerField()
