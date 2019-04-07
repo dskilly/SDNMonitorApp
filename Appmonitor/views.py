@@ -12,4 +12,4 @@ def Appmonitorsite(request):
 	for device in devices:
 		name = device['device_id']
 		nodes.append({'name': name, 'tx_errors': sum([x.tx_errors for x in port_stats.objects.filter(device_id=name)])})
-	return render(request,'Appmonitor/Appmonitorsite.html', {'nodes': nodes, 'flows': flow_stats.objects.values()})
+	return render(request,'Appmonitor/Appmonitorsite.html', {'nodes': nodes, 'flows': flow_stats.objects.values()[:20]})
