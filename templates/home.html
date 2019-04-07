@@ -188,11 +188,28 @@ body {
   padding-right: 20px;
 }
 
+/*--------- Particles JS----------*/
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #7c7c7c;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 </style>
 </head>
 <body>
 
+<div id="particles-js"></div>
+<script src="{% static "particles.js" %}"></script>
+<script src="{% static "app.js" %}"></script>
 
 <!-- Navbar -->
 <div id="navbar">

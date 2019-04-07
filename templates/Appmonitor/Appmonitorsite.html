@@ -13,13 +13,6 @@
 <style>
 body {
   font-family: "Lato", sans-serif;
-
-		background-image: url("{% static "/Background.webp" %}");
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-position: center;
-		background-size: cover;
-	
 }
 #title{
 
@@ -88,6 +81,7 @@ body {
 
 /*-----------Graph Style---------*/
 #Statchart_chart{
+  z-index: 9998;
   margin-left: 20%;
 	margin-right: 20%;
 	position: inline-block;
@@ -99,6 +93,7 @@ body {
 
 /*------------Table Style---------*/
 #Flowchart{
+  z-index: 9998;
   margin-left: 20%;
   margin-right: 20%;
   position: inline-block;
@@ -119,12 +114,25 @@ tr:nth-child(even) {
 }
 /*-------End of Table Style---------*/
 
+
+/*--------- Particles JS style ----------*/
+#particles-js{
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  background-color: #7c7c7c;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 </style>
 </head>
 <body onload="flowTableLoad()">
 
-<script src="{% static "particles.js" %}"></script>
-<script src="{% static "app.js" %}"></script>
 <!-- Navbar -->
 <div id="navbar">
   <a href="#"><img src={% static "/userico.png" %} class="block"> Welcome, {{ user.username }}</a>
@@ -133,6 +141,7 @@ tr:nth-child(even) {
   <a href="{% url 'admin:index' %}"><img src={% static "/siteconfico.png" %} class="block"> Admin Config</a>
   <a href="{% url 'logout' %}"><img src={% static "/logoutico.png" %} class="block"> Logout</a>
 </div>
+
 <!-- End of navbar -->
 <br><br><br><br><br>
  
@@ -241,7 +250,10 @@ function myFunction() {
 </table>
 <br>
 <button onclick="flowTableLoad()">Load Flows</button>
-   
+<div id="particles-js">
+<script src="{% static "particles.js" %}"></script>
+<script src="{% static "app.js" %}"></script>
+</div>
 </body>
 </html> 
   
