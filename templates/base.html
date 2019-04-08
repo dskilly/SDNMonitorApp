@@ -2,13 +2,15 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
+{% block head %}
 <head>
   <meta charset="utf-8">
   <title>
   	{% block title %}Django Auth Tutorial | BASE.html{% endblock %}
   </title>
-  <link rel="shortcut icon" href="{% static 'poxpalLogo.ico' %}" />
+  <link rel="icon" href="{% static 'poxpalLogo.gif' %}" type="image/gif" />
 </head>
+{% endblock %}
 <body>
   <main>
     {% block content %}
