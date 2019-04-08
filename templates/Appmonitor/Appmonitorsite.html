@@ -9,290 +9,289 @@
   {% load static from staticfiles %}
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
-#title{
-  color: #f2f2f2;
-  text-align: right;
-  text-decoration: none;
-  padding-right: 10px;
-}
-/*-----------Navbar Style -----*/
-/* Responsive navbar */
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+    #title{
+      color: #f2f2f2;
+      text-align: right;
+      text-decoration: none;
+      padding-right: 10px;
+    }
+    /*-----------Navbar Style -----*/
+    /* Responsive navbar */
 
-@media screen and (max-width: 670px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
+    @media screen and (max-width: 670px) {
+      .topnav a:not(:first-child) {display: none;}
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
 
-@media screen and (max-width: 670px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
+    @media screen and (max-width: 670px) {
+      .topnav.responsive {position: relative;}
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
 
-/* Style the navbar */
-.topnav {
-  z-index: 9999;
-  overflow: hidden;
-  background-color: #333;
-}
+    /* Style the navbar */
+    .topnav {
+      z-index: 9999;
+      overflow: hidden;
+      background-color: #333;
+    }
 
-/* Navbar links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-}
+    /* Navbar links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+    }
 
-.topnav a:hover {
-  background-color: #006cff;
-  color: black;
-}
+    .topnav a:hover {
+      background-color: #006cff;
+      color: black;
+    }
 
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
+    .topnav a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
 
-.topnav .icon {
-  display: none;
-}
+    .topnav .icon {
+      display: none;
+    }
 
-/* Page content */
-.content {
-  padding: 16px;
-}
+    /* Page content */
+    .content {
+      padding: 16px;
+    }
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
+    /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
-
-
-/*-----------END Navbar Style -----*/
-
-.text-block {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/*-----------Graph Style---------*/
-#Statchart_chart{
-  z-index: 9998;
-  margin-left: 20%;
-	margin-right: 20%;
-	position: inline-block;
-	background-color: rgba(255,255,255,0.92);
-	padding: 15px;
-	text-align: center;
-
-}
-
-/*------------Table Style---------*/
-#Flowchart{
-  z-index: 9998;
-  margin-left: 20%;
-  margin-right: 20%;
-  position: inline-block;
-  background-color: rgba(255,255,255,0.92);
-  padding: 15px;
-  text-align: center;
-}
-table {
-  margin: 0px auto;
-}
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-/*-------End of Table Style---------*/
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky + .content {
+      padding-top: 60px;
+    }
 
 
-/*--------- Particles JS style ----------*/
-#particles-js{
-  z-index: -10;
-  width: 100%;
-  height: 100%;
-  background-color: #7c7c7c;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+    /*-----------END Navbar Style -----*/
 
-</style>
+    .text-block {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: black;
+      color: white;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /*-----------Graph Style---------*/
+    #Statchart_chart{
+      z-index: 9998;
+      margin-left: 20%;
+    	margin-right: 20%;
+    	position: inline-block;
+    	background-color: rgba(255,255,255,0.92);
+    	padding: 15px;
+    	text-align: center;
+
+    }
+
+    /*------------Table Style---------*/
+    #Flowchart{
+      z-index: 9998;
+      margin-left: 20%;
+      margin-right: 20%;
+      position: inline-block;
+      background-color: rgba(255,255,255,0.92);
+      padding: 15px;
+      text-align: center;
+    }
+    table {
+      margin: 0px auto;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    /*-------End of Table Style---------*/
+
+
+    /*--------- Particles JS style ----------*/
+    #particles-js{
+      z-index: -10;
+      width: 100%;
+      height: 100%;
+      background-color: #7c7c7c;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
 </head>
 <body onload="flowTableLoad()">
 
-<!-- Navbar -->
-<div class="topnav" id="navbar">
-  <a href="{% url 'home' %}"><img src={% static "/userico.png" %} class="block"> Welcome, {{ user.username }}</a>
-  <a href="{% url 'topology_list' %}"><img src={% static "/dshbrdico.png" %} class="block"> Topology</a>
-  <a href="{% url 'Appmonitorsite' %}"><img src={% static "/appconfigico.png" %} class="block"> Statistics</a>
-  <a href="{% url 'admin:index' %}"><img src={% static "/siteconfico.png" %} class="block"> Admin Config</a>
-  <a href="{% url 'logout' %}"><img src={% static "/logoutico.png" %} class="block"> Logout</a>
-  <a href="javascript:void(0);" class="icon" onclick="respond()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+  <!-- Navbar -->
+  <div class="topnav" id="navbar">
+    <a href="{% url 'home' %}"><img src={% static "/userico.png" %} class="block"> Welcome, {{ user.username }}</a>
+    <a href="{% url 'topology_list' %}"><img src={% static "/dshbrdico.png" %} class="block"> Topology</a>
+    <a href="{% url 'Appmonitorsite' %}"><img src={% static "/appconfigico.png" %} class="block"> Statistics</a>
+    <a href="{% url 'admin:index' %}"><img src={% static "/siteconfico.png" %} class="block"> Admin Config</a>
+    <a href="{% url 'logout' %}"><img src={% static "/logoutico.png" %} class="block"> Logout</a>
+    <a href="javascript:void(0);" class="icon" onclick="respond()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 
-<!-- End of navbar -->
-<br><br><br><br><br>
- 
- 
- 
- <div id="Statchart_chart"></div>
+  <!-- End of navbar -->
+  <br><br><br><br><br>
+   
+   
+   
+  <div id="Statchart_chart"></div>
 
-  
-<!-- Google Graph Maker --> 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-// Load google charts
-google.charts.load('current', {'packages':['corechart']});
-google.charts.load('current', {'packages':['line']});
-google.charts.setOnLoadCallback(drawChart);
+    
+  <!-- Google Graph Maker --> 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+  // Load google charts
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.load('current', {'packages':['line']});
+  google.charts.setOnLoadCallback(drawChart);
 
 
-// Draw the chart and set the chart values
-function drawChart() {
-  var data = new google.visualization.arrayToDataTable([
-    ["Node id", "Total errors"],
-    {% for x in nodes %}
-    ["{{ x.name }}", {{ x.tx_errors }}],
-    {% endfor %}
-  ]);
+  // Draw the chart and set the chart values
+  function drawChart() {
+    var data = new google.visualization.arrayToDataTable([
+      ["Node id", "Total errors"],
+      {% for x in nodes %}
+      ["{{ x.name }}", {{ x.tx_errors }}],
+      {% endfor %}
+    ]);
 
-  var view = new google.visualization.DataView(data);
-  view.setColumns([0, 1]);
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1]);
 
-  var options = {
-    title: "Packet errors per device",
-    width: "100%",
-    height: "100%",
-    bar: {groupWidth: "95%"},
-    legend: {position: "none"},
-    color: "red",
-  };
+    var options = {
+      title: "Packet errors per device",
+      width: "100%",
+      height: "100%",
+      bar: {groupWidth: "95%"},
+      legend: {position: "none"},
+      color: "red",
+    };
 
-  var chart = new google.visualization.ColumnChart(document.getElementById('Statchart_chart'));
+    var chart = new google.visualization.ColumnChart(document.getElementById('Statchart_chart'));
 
-  chart.draw(view, options);
-}
-</script>
+    chart.draw(view, options);
+  }
+  </script>
 
-<script type="text/javascript">
-  function flowTableLoad() {
-    var table = document.getElementById("TABLE");
-    var x = document.getElementById("TABLE").rows.length;
-    for(j = x - 1; j > 0; j--) {
-      var row = table.deleteRow(j);
+  <script type="text/javascript">
+    function flowTableLoad() {
+      var table = document.getElementById("TABLE");
+      var x = document.getElementById("TABLE").rows.length;
+      for(j = x - 1; j > 0; j--) {
+        var row = table.deleteRow(j);
+      }
+
+      {% for x in flows %}
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = "{{ x.table_id }}";
+        var cell2 = row.insertCell(1);
+        cell2.innerHTML = "{{ x.priority }}";
+        var cell3 = row.insertCell(2);
+        cell3.innerHTML = "{{ x.packet_count }}";
+        var cell4 = row.insertCell(3);
+        cell4.innerHTML = "{{ x.duration_sec }}";
+        var cell5 = row.insertCell(4);
+        cell5.innerHTML = "{{ x.idle_timeout }}";
+        var cell6 = row.insertCell(5);
+        cell6.innerHTML = "{{ x.hard_timeout }}";
+      {% endfor %}
     }
+  </script>
 
-    {% for x in flows %}
-      var row = table.insertRow(-1);
-      var cell1 = row.insertCell(0);
-      cell1.innerHTML = "{{ x.table_id }}";
-      var cell2 = row.insertCell(1);
-      cell2.innerHTML = "{{ x.priority }}";
-      var cell3 = row.insertCell(2);
-      cell3.innerHTML = "{{ x.packet_count }}";
-      var cell4 = row.insertCell(3);
-      cell4.innerHTML = "{{ x.duration_sec }}";
-      var cell5 = row.insertCell(4);
-      cell5.innerHTML = "{{ x.idle_timeout }}";
-      var cell6 = row.insertCell(5);
-      cell6.innerHTML = "{{ x.hard_timeout }}";
-    {% endfor %}
+  <script>
+  //---------Navbar --------------------//
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+
+  // Get the navbar
+  var navbar = document.getElementById("navbar");
+
+  // Get the offset position of the navbar
+  var sticky = navbar.offsetTop;
+
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
   }
-</script>
+  //---------END Navbar --------------------//
 
-<script>
-//---------Navbar --------------------//
-// When the user scrolls the page, execute myFunction 
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
+  //---------- responsiveness -----------//
+  function respond() {
+    var x = document.getElementById("navbar")
+    if(x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
   }
-}
-//---------END Navbar --------------------//
+  </script>
 
-//---------- responsiveness -----------//
-function respond() {
-  var x = document.getElementById("navbar")
-  if(x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-
-<br>  
-<div id="Flowchart" >
-<table id="TABLE">
-  <tr>
-    <th>Table ID</th>
-    <th>Piority</th> 
-    <th>Packets</th>
-    <th>Duration sec</th> 
-    <th>Idle timeout</th> 
-    <th>Hard timeout</th>
-  </tr>
-</table>
-<br>
-<button onclick="flowTableLoad()">Load Flows</button>
-<div id="particles-js">
-<script src="{% static "particles.js" %}"></script>
-<script src="{% static "app.js" %}"></script>
-</div>
+  <br>  
+  <div id="Flowchart" >
+  <table id="TABLE">
+    <tr>
+      <th>Table ID</th>
+      <th>Piority</th> 
+      <th>Packets</th>
+      <th>Duration sec</th> 
+      <th>Idle timeout</th> 
+      <th>Hard timeout</th>
+    </tr>
+  </table>
+  <br>
+  <button onclick="flowTableLoad()">Load Flows</button>
+  <div id="particles-js">
+  <script src="{% static "particles.js" %}"></script>
+  <script src="{% static "app.js" %}"></script>
+  </div>
 </body>
 </html> 
   
