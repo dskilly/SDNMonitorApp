@@ -10,16 +10,10 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   font-family: "Lato", sans-serif;
-
-		background-image: url("{% static "/Background.webp" %}");
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-position: center;
-		background-size: cover;
-	
 }
 #title{
 
@@ -29,15 +23,34 @@ body {
   padding-right: 10px;
 }
 /*-----------Navbar Style -----*/
+/* Responsive navbar */
+
+@media screen and (max-width: 670px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
 /* Style the navbar */
-#navbar {
+.topnav {
   z-index: 9999;
   overflow: hidden;
   background-color: #333;
 }
 
 /* Navbar links */
-#navbar a {
+.topnav a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -46,12 +59,12 @@ body {
   text-decoration: none;
 }
 
-#navbar a:hover {
+.topnav a:hover {
   background-color: #006cff;
   color: black;
 }
 
-#navbar a.active {
+.topnav a.active {
   background-color: #4CAF50;
   color: white;
 }
@@ -78,7 +91,7 @@ body {
 
 /*-----------Slideshow Style -----*/
 
-* {box-sizing:border-box}
+.text {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
@@ -212,12 +225,15 @@ body {
 <script src="{% static "app.js" %}"></script>
 
 <!-- Navbar -->
-<div id="navbar">
+<div class="topnav" id="navbar">
   <a href="{% url 'home' %}"><img src={% static "/userico.png" %} class="block"> Welcome, {{ user.username }}</a>
   <a href="{% url 'topology_list' %}"><img src={% static "/dshbrdico.png" %} class="block"> Topology</a>
   <a href="{% url 'Appmonitorsite' %}"><img src={% static "/appconfigico.png" %} class="block"> Statistics</a>
   <a href="{% url 'admin:index' %}"><img src={% static "/siteconfico.png" %} class="block"> Admin Config</a>
   <a href="{% url 'logout' %}"><img src={% static "/logoutico.png" %} class="block"> Logout</a>
+  <a href="javascript:void(0);" class="icon" onclick="respond()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
 <!-- End of navbar -->
 
@@ -319,6 +335,15 @@ function showSlides(n) {
 }
 //---------END Sideshow --------------------//
 
+//---------- responsiveness -----------//
+function respond() {
+  var x = document.getElementById("navbar")
+  if(x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 </script>
    
 </body>
